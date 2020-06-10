@@ -1,0 +1,26 @@
+﻿@model CalculateRequest;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1 class="display-4">Currency Convertor</h1>
+    <p>Convert the currency</p>
+
+    <form class="form-inline" method="post">
+        <input class="form-control mr-2" type="number" step="0.01" placeholder="100.00" asp-for="FromValue"/>
+
+        <select class="form-control mr-4" asp-for="FromCurrencyCode" asp-items="@ViewBag.currencyCodeList"></select>
+
+        <p class="mr-2">Convert to</p>
+        <select class="form-control mr-2" asp-for="ToCurrnecyCode" asp-items="@ViewBag.baseCurrencyCodeList"></select>
+
+        <input class="btn btn-primary" type="submit" value="Convert"/>
+    </form>
+
+    @if ( ViewData["result"] != null)
+    {
+        <p>@ViewData["result"]</p>
+    }
+</div>
