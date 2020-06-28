@@ -16,8 +16,6 @@ namespace DotNetTechnicalTest_CurancyCalculator.Controllers
             _currencyService = currencyService;
         }
 
-        public double _result { get; set; }
-
         public IActionResult Index()
         {
             // Set dropdown lists
